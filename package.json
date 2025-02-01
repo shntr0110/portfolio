@@ -23,7 +23,7 @@
     "@astrojs/tailwind": "5.1.4",
     "@tailwindcss/container-queries": "0.1.1",
     "alpinejs": "3.14.8",
-    "astro": "5.1.7",
+    "astro": "5.2.3",
     "astro-icon": "1.1.5",
     "postcss-fluid-sizing-function": "0.0.2",
     "tailwindcss-animate": "1.0.7",
