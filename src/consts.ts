@@ -1,4 +1,4 @@
-export const siteTitle = 'sdenv';
+export const siteTitle = 'Tokuyama Shintaro Portfolio';
 export const siteLang = 'ja';
 export const siteRegion = 'JP';
-export const siteTwitterId = 'sdenv_dev';
+export const siteTwitterId = 'tokuyama_shintaro_portfolio';

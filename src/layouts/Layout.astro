@@ -96,33 +96,16 @@ const canonicalURL = (() => {
        */
     }
 
-    <nav
-      class="sticky top-0 z-10 bg-[#111111] text-[length:fluid(375px_0.875rem,sm_1rem)] font-bold text-white"
-    >
-      <ul class="wrapper flex max-w-none items-center gap-x-[fluid(375px_1rem,sm_1.5rem)]">
-        <li class="mr-auto">
-          {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
-          <a class="block py-4" href={isHome ? null : '/'}>
-            <Icon name="logo" class="h-5 w-auto" role="img" aria-label={siteTitle} />
-          </a>
-        </li>
-        <li>
-          <a class="block py-2" href="/blog/">ブログ</a>
-        </li>
-        <li>
-          <a class="block py-2" href="https://github.com/yuheiy/sdenv" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a class="block py-2" href={`https://x.com/${siteTwitterId}`} target="_blank">X</a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <h1>Tokuyama Shintaro</h1>
+      <nv></nv>
+    </header>
 
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer class="sticky top-full mt-[fluid(3rem,5rem)] bg-slate-100 py-4 text-center text-sm">
-      <p class="wrapper">© <span x-data x-text="new Date().getFullYear()"></span> Yuhei Yasuda</p>
+    <footer class="sticky top-full bg-slate-100 py-4">
+      <p class="text-right text-sm">© Shintaro Tokuyama</p>
     </footer>
 
     {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}

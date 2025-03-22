@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import { dateFormatter } from '../../lib/date-time-formatter';
 
 export async function getStaticPaths() {
-  return (await getCollection('blog')).map((entry) => ({
+  return (await getCollection('works')).map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
