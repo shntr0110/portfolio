@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components';
 import appleTouchIconImage from '../assets/apple-touch-icon.png';
 import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
@@ -41,6 +40,21 @@ const canonicalURL = (() => {
   }
   return new URL(Astro.url.pathname, Astro.site);
 })();
+
+const navItems = [
+  {
+    name: 'home',
+    link: '/',
+  },
+  {
+    name: 'works',
+    link: '/works',
+  },
+  {
+    name: 'about',
+    link: '/#about',
+  },
+];
 ---
 
 <!--
@@ -96,16 +110,41 @@ const canonicalURL = (() => {
        */
     }
 
-    <header>
-      <h1>Tokuyama Shintaro</h1>
-      <nv></nv>
+    <header class="bg-blue px-[15px] py-4 lg:px-10 lg:py-5">
+      <div class="flex items-center justify-between">
+        <h1 class="leading-160">
+          <a
+            href="/"
+            class="text-16 lg:text-24 leading-160 block font-bold capitalize tracking-normal text-white"
+            >tokuyama shintaro</a
+          >
+        </h1>
+        <nav>
+          <ul class="flex items-center gap-2.5 lg:gap-10">
+            {
+              navItems.map((navItem) => (
+                <li class="leading-160">
+                  <a
+                    href={navItem.link}
+                    class="text-12 lg:text-16 leading-160 block font-bold capitalize tracking-normal text-white"
+                  >
+                    {navItem.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <slot />
 
     {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer class="sticky top-full bg-slate-100 py-4">
-      <p class="text-right text-sm">© Shintaro Tokuyama</p>
+    <footer class="bg-blue sticky top-full px-10 py-4">
+      <p class="text-12 lg:text-14 text-right font-bold capitalize text-white">
+        © tokuyama shintaro
+      </p>
     </footer>
 
     {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}
