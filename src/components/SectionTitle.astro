@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  titleEn: string;
+}
+
+const { title, titleEn } = Astro.props;
+---
+
+<h2 class="mx-auto flex w-fit flex-col items-center md:mx-0 md:items-start">
+  <span class="text-16 text-blue leading-140 tracking-02 font-bold">{title}</span>
+  <span class="text-36 lg:text-48 leading-140 tracking-02 font-bold">{titleEn}</span>
+</h2>

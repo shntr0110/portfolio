@@ -61,10 +61,7 @@ const navItems = [
   https://bugs.chromium.org/p/chromium/issues/detail?id=1378462
   https://schepp.dev/posts/smooth-scrolling-and-page-search/
 -->
-<html
-  class="bg-white text-slate-800 kerning-none [line-break:normal] [overflow-wrap:anywhere] motion-safe:focus-within:scroll-smooth"
-  lang={siteLang}
->
+<html lang={siteLang}>
   <head>
     {
       /**
@@ -82,8 +79,6 @@ const navItems = [
         .join(' &#8211; ')}
     />
 
-    <script src="../scripts/main.ts"></script>
-
     {description && <meta name="description" content={description} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={`@${siteTwitterId}`} />
@@ -100,9 +95,18 @@ const navItems = [
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
     <link rel="icon" href={faviconImage.src} type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="../scripts/main.ts"></script>
   </head>
 
-  <body class="min-h-svh">
+  <body>
     {
       /**
        * use `100svh` instead of `100dvh`
@@ -110,12 +114,10 @@ const navItems = [
        */
     }
 
-    <header class="bg-blue px-[15px] py-4 lg:px-10 lg:py-5">
+    <header class="bg-blue fixed left-0 top-0 w-full px-[15px] py-5 lg:px-10 lg:py-6">
       <div class="flex items-center justify-between">
         <h1 class="leading-160">
-          <a
-            href="/"
-            class="text-16 lg:text-24 leading-160 block font-bold capitalize tracking-normal text-white"
+          <a href="/" class="text-16 lg:text-24 leading-100 block font-bold capitalize text-white"
             >tokuyama shintaro</a
           >
         </h1>
@@ -126,7 +128,7 @@ const navItems = [
                 <li class="leading-160">
                   <a
                     href={navItem.link}
-                    class="text-12 lg:text-16 leading-160 block font-bold capitalize tracking-normal text-white"
+                    class="text-12 lg:text-16 leading-100 block font-bold capitalize text-white"
                   >
                     {navItem.name}
                   </a>

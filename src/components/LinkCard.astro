@@ -1,0 +1,10 @@
+---
+const { image, title } = Astro.props;
+---
+
+<a href="/" class="block size-full">
+  <div class="w-full">
+    <img src={image.src} alt={title} class="size-full object-cover" />
+  </div>
+  <p class="text-18 leading-160 mt-6 font-bold">{title}</p>
+</a>

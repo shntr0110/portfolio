@@ -130,12 +130,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ['sans-serif'],
+        notoSansJp: ['Noto Sans JP', 'sans-serif'],
       },
       colors: {
         white: '#ffffff',
         black: '#333333',
         blue: '#388DB9',
-        lightBlue: '#9ECFEC',
+        lightBlue: '#c6eaff',
       },
       fontSize: {
         ...[
