@@ -21,7 +21,7 @@ const { Content } = await entry.render();
   ogType="article"
   ogImage={entry.data.ogImage?.src}
 >
-  <Hero title={entry.data.title}>
+  <Hero title={entry.data.title} titleEn={entry.data.title}>
     <time datetime={entry.data.pubDate.toISOString()}>
       {dateFormatter.format(entry.data.pubDate)}
     </time>

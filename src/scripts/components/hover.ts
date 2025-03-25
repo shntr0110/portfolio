@@ -70,7 +70,7 @@ Alpine.data('hover', () => {
 
       setTimeout(() => {
         target.classList.remove('is-leaving');
-        this.endRollLeave(target);
+        this.endRollLeave();
       }, duration);
     },
 
@@ -85,7 +85,7 @@ Alpine.data('hover', () => {
       this.startRollLeave(this.$el);
     },
 
-    endRollLeave(target: HTMLElement) {
+    endRollLeave() {
       if (this.isTouchDevice) return;
       this.isPlaying = false;
 

@@ -10,5 +10,6 @@
       "@assets/*": ["src/assets/*"]
     }
   },
-  "exclude": ["dist"] // https://github.com/withastro/language-tools/issues/643#issuecomment-1699486909
+  "exclude": ["dist"], // https://github.com/withastro/language-tools/issues/643#issuecomment-1699486909
+  "include": ["src/**/*"]
 }

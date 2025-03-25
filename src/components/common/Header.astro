@@ -4,18 +4,29 @@ interface Props {
     link: string;
     name: string;
   }[];
+  isHome: boolean;
 }
 
-const { navItems } = Astro.props;
+const { navItems, isHome } = Astro.props;
 ---
 
 <header class="fixed left-0 top-0 w-full bg-blue px-[15px] py-5 lg:px-10 lg:py-6">
   <div class="flex items-center justify-between">
-    <h1 class="leading-160">
-      <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link"
-        >tokuyama shintaro</a
-      >
-    </h1>
+    {
+      isHome ? (
+        <h1 class="leading-160">
+          <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link">
+            tokuyama shintaro
+          </a>
+        </h1>
+      ) : (
+        <div class="leading-160">
+          <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link">
+            tokuyama shintaro
+          </a>
+        </div>
+      )
+    }
     <nav>
       <ul class="flex items-center gap-2.5 lg:gap-10">
         {
