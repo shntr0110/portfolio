@@ -1,81 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SectionTitle from '../components/SectionTitle.astro';
-import LinkCard from '../components/LinkCard.astro';
-import Button from '../components/Button.astro';
-
-import imageWorks01 from '../assets/image-works01.jpg';
-import imageWorks02 from '../assets/image-works02.jpg';
-import imageWorks03 from '../assets/image-works03.jpg';
-import ImageProfile from '../assets/image_profile.jpg';
+import Layout from '@layouts/Layout.astro';
+import Fv from '@components/top/Fv.astro';
+import Works from '@components/top/Works.astro';
+import About from '@components/top/About.astro';
 
 const tagline = '徳山 申太郎のポートフォリオ';
 const description =
   '徳山 申太郎のポートフォリオサイトです。これまでの制作実績や私自身の簡単な紹介を掲載しています。';
-
-const works = [
-  {
-    title: '実績1',
-    image: imageWorks01,
-  },
-  {
-    title: '実績2',
-    image: imageWorks02,
-  },
-  {
-    title: '実績3',
-    image: imageWorks03,
-  },
-];
 ---
 
 <Layout isHome tagline={tagline} description={description}>
   <main class="pt-[var(--header-height)]">
-    <div class="container mt-20 lg:mt-[120px]">
-      <p class="text-56 lg:text-64 leading-140 font-bold capitalize">
-        tokuyama shintaro<br />
-        portfolio
-      </p>
-      <p class="text-18 leading-200 tracking-02 mt-10">
-        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-      </p>
-    </div>
-
-    <section id="works" class="mt-20 lg:mt-40">
-      <div class="container">
-        <SectionTitle title="制作実績" titleEn="Works" />
-        <div class="mt-16">
-          <ul class="grid w-full grid-cols-1 gap-10 md:grid-cols-3 lg:gap-16">
-            {
-              works.map((work) => (
-                <li>
-                  <LinkCard image={work.image} title={work.title} />
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div class="mt-16 text-center">
-          <Button link="/works" name="制作実績一覧へ" />
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="bg-lightBlue mt-20 py-[60px] lg:mt-40">
-      <div class="container">
-        <SectionTitle title="私について" titleEn="About me" />
-        <div class="mt-16 flex flex-col items-center gap-[60px] md:flex-row md:items-start">
-          <div class="aspect-square w-[300px] shrink-0 overflow-hidden rounded-full">
-            <img src={ImageProfile.src} alt="" class="size-full object-cover" />
-          </div>
-          <div class="w-auto">
-            <p class="text-32 leading-160 font-bold">徳山 申太郎</p>
-            <p class="text-16 leading-160 mt-5">
-              プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Fv />
+    <Works />
+    <About />
   </main>
 </Layout>

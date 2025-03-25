@@ -1,10 +1,11 @@
 ---
-const { image, title } = Astro.props;
+const { image, title, client } = Astro.props;
 ---
 
-<a href="/" class="block size-full">
-  <div class="w-full">
+<a href="/" class="row-span-3 grid w-full grid-rows-subgrid gap-0">
+  <div class="aspect-[1.5] w-full">
     <img src={image.src} alt={title} class="size-full object-cover" />
   </div>
-  <p class="text-18 leading-160 mt-6 font-bold">{title}</p>
+  <p class="mt-4 text-16 font-bold leading-160 md:mt-5 md:text-18">{client}</p>
+  <p class="mt-2 text-18 font-bold leading-160 md:text-20">{title}</p>
 </a>

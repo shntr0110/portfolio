@@ -4,7 +4,7 @@
 
 @screen lg {
   :root {
-    --header-height: calc(72 / 16 * 1rem);
+    --header-height: calc(64 / 16 * 1rem);
   }
 }
 

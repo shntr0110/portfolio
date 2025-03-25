@@ -1,0 +1,49 @@
+---
+import SectionTitle from '../SectionTitle.astro';
+import LinkCard from '../LinkCard.astro';
+import Button from '../Button.astro';
+
+import imageWorks01 from '@assets/image-works01.jpg';
+import imageWorks02 from '@assets/image-works02.jpg';
+import imageWorks03 from '@assets/image-works03.jpg';
+
+const works = [
+  {
+    client: 'クライアント名1',
+    title: '実績1',
+    image: imageWorks01,
+  },
+  {
+    client: 'クライアント名2',
+    title: '実績2',
+    image: imageWorks02,
+  },
+  {
+    client: 'クライアント名3',
+    title: '実績3',
+    image: imageWorks03,
+  },
+];
+---
+
+<section id="works" class="mt-20 lg:mt-40">
+  <div class="container">
+    <SectionTitle title="制作実績" titleEn="Works" />
+    <div class="mt-12 lg:mt-14">
+      <ul
+        class="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-[calc(56/1440*100vw)] 2xl:gap-14"
+      >
+        {
+          works.map((work) => (
+            <li class="contents">
+              <LinkCard image={work.image} title={work.title} client={work.client} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="mt-12 text-center lg:mt-14">
+      <Button link="/works" name="制作実績一覧へ" />
+    </div>
+  </div>
+</section>
