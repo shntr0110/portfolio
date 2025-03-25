@@ -118,9 +118,9 @@ const navItems = [
     }
 
     <Header navItems={navItems} />
-
-    <slot />
-
+    <main class="pt-[var(--header-height)]">
+      <slot />
+    </main>
     <Footer />
 
     {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}
