@@ -1,0 +1,36 @@
+---
+interface Props {
+  navItems: {
+    link: string;
+    name: string;
+  }[];
+}
+
+const { navItems } = Astro.props;
+---
+
+<header class="fixed left-0 top-0 w-full bg-blue px-[15px] py-5 lg:px-10 lg:py-6">
+  <div class="flex items-center justify-between">
+    <h1 class="leading-160">
+      <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link"
+        >tokuyama shintaro</a
+      >
+    </h1>
+    <nav>
+      <ul class="flex items-center gap-2.5 lg:gap-10">
+        {
+          navItems.map((navItem) => (
+            <li class="leading-160">
+              <a
+                href={navItem.link}
+                class="block text-12 font-bold capitalize leading-100 text-white link lg:text-16"
+              >
+                {navItem.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

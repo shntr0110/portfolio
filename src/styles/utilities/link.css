@@ -1,0 +1,3 @@
+.link {
+  @apply transition-opacity duration-300 lg:hover:opacity-60;
+}

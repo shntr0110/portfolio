@@ -4,6 +4,9 @@ import faviconImage from '../assets/favicon.svg';
 import defaultOpenGraphImage from '../assets/opengraph-image.png';
 import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
 
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+
 interface BaseProps {
   isHome?: false | undefined;
   is404?: false | undefined;
@@ -114,40 +117,11 @@ const navItems = [
        */
     }
 
-    <header class="bg-blue fixed left-0 top-0 w-full px-[15px] py-5 lg:px-10 lg:py-6">
-      <div class="flex items-center justify-between">
-        <h1 class="leading-160">
-          <a href="/" class="text-16 lg:text-24 leading-100 block font-bold capitalize text-white"
-            >tokuyama shintaro</a
-          >
-        </h1>
-        <nav>
-          <ul class="flex items-center gap-2.5 lg:gap-10">
-            {
-              navItems.map((navItem) => (
-                <li class="leading-160">
-                  <a
-                    href={navItem.link}
-                    class="text-12 lg:text-16 leading-100 block font-bold capitalize text-white"
-                  >
-                    {navItem.name}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <Header navItems={navItems} />
 
     <slot />
 
-    {/* https://css-tricks.com/a-clever-sticky-footer-technique/ */}
-    <footer class="bg-blue sticky top-full px-10 py-4">
-      <p class="text-12 lg:text-14 text-right font-bold capitalize text-white">
-        © tokuyama shintaro
-      </p>
-    </footer>
+    <Footer />
 
     {/* https://atfzl.com/don-t-attach-tooltips-to-document-body */}
     <div id="js-overlay-container"></div>
