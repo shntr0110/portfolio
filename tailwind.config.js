@@ -93,7 +93,7 @@ const container = plugin(function ({ addComponents }) {
         maxWidth: rem(1100),
       },
     },
-    '.container-lg': {
+    '.container-sm': {
       maxWidth: '100%',
       paddingRight: rem(24),
       paddingLeft: rem(24),
@@ -102,9 +102,7 @@ const container = plugin(function ({ addComponents }) {
       '@screen md': {
         paddingRight: rem(97),
         paddingLeft: rem(97),
-      },
-      '@screen lg': {
-        maxWidth: rem(1440),
+        maxWidth: rem(900),
       },
     },
   });

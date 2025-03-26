@@ -3,12 +3,13 @@ import PageTitle from './PageTitle.astro';
 
 interface Props {
   title: string;
+  titleSub?: string;
   titleEn?: string;
 }
 
-const { title, titleEn } = Astro.props;
+const { title, titleEn, titleSub } = Astro.props;
 ---
 
 <div class="container pt-20 lg:pt-[100px]">
-  <PageTitle title={title} titleEn={titleEn} />
+  <PageTitle title={title} titleEn={titleEn} titleSub={titleSub} />
 </div>

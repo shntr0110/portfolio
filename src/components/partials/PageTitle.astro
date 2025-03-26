@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   titleEn?: string;
+  titleSub?: string;
 }
 
-const { title, titleEn } = Astro.props;
+const { title, titleEn, titleSub } = Astro.props;
 ---
 
 {
@@ -13,6 +14,9 @@ const { title, titleEn } = Astro.props;
       <span class="text-18 font-bold leading-140 tracking-02 text-blue">{title}</span>
       <span class="text-48 font-bold capitalize leading-140 tracking-02 lg:text-56">{titleEn}</span>
     </h1>
+  ) : titleSub ? (
+    <h1 class="text-40 font-bold capitalize leading-140 tracking-02 lg:text-48">{title}</h1>
+    <p class="mt-5 text-20 leading-140 tracking-02 lg:text-24">{titleSub}</p>
   ) : (
     <h1 class="w-fit text-40 font-bold capitalize leading-140 tracking-02 lg:text-48">{title}</h1>
   )

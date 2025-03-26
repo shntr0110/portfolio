@@ -1,34 +1,50 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/partials/Hero.astro';
+import Button from '@components/partials/Button.astro';
+
+import imageWorks01 from '@assets/image-works01.jpg';
 
 const title = 'ブログ';
 const description = 'sdenvに関するブログの一覧です。';
 ---
 
 <Layout title={title} description={description}>
-  <Hero title=`記事詳細` titleEn=`works` />
-  <div class="container">
-    <div class="">
-      <div class="">
-        <img src="" alt="" />
-      </div>
-      <div class="">
-        <h2>サイトURL</h2>
-        <p></p>
-      </div>
-      <div class="">
-        <h2>概要</h2>
-        <p></p>
-      </div>
-      <div class="">
-        <h2>制作期間</h2>
-        <p></p>
-      </div>
-      <div class="">
-        <h2>使用ツール・技術</h2>
-        <p></p>
-      </div>
+  <Hero title=`記事詳細` titleSub="案件の説明が入ります" />
+  <div class="container my-[100px] lg:my-[120px]">
+    <div class="aspect-[1.8] w-full">
+      <img src={imageWorks01.src} alt="" class="size-full object-cover" />
+    </div>
+    <div class="mt-[60px] lg:mt-20">
+      <h2 class="works-heading">サイトURL</h2>
+      <p class="mt-[15px] lg:mt-[20px]">
+        <a href="/" class="text-16 leading-160 text-blue link">URLが入ります</a>
+      </p>
+    </div>
+    <div class="mt-[60px] lg:mt-20">
+      <h2 class="works-heading">概要</h2>
+      <p class="mt-5 text-16 leading-160 lg:mt-[30px]">
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      </p>
+    </div>
+    <div class="mt-[60px] lg:mt-20">
+      <h2 class="works-heading">制作期間</h2>
+      <p class="mt-5 text-16 leading-160 lg:mt-[30px]">テキストが入ります。</p>
+    </div>
+    <div class="mt-[60px] lg:mt-20">
+      <h2 class="works-heading">使用ツール・技術</h2>
+      <ul class="mt-5 flex flex-col gap-3 lg:mt-[30px]">
+        {
+          Array.from({ length: 5 }, (_, i) => (
+            <li class="relative pl-[18px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-blue">
+              <p class="text-16 leading-160">リスト</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="mt-[60px] text-center lg:mt-20">
+      <Button link="/works" name="一覧へ戻る" />
     </div>
   </div>
 </Layout>
