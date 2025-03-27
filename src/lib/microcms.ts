@@ -12,11 +12,17 @@ export type Works = {
   id?: string;
   title: string;
   titleSub: string;
-  thumbnail?:
-    | {
-        url?: string;
-      }
-    | undefined;
+  thumbnail: {
+    url: string;
+  };
+  siteUrl: string;
+  description: string;
+  period: string;
+  technologies: [
+    {
+      name: string;
+    },
+  ];
 } & MicroCMSListContent;
 
 // APIの呼び出し
