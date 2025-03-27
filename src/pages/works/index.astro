@@ -3,27 +3,8 @@ import Hero from '@components/partials/Hero.astro';
 import LinkCard from '@components/partials/LinkCard.astro';
 import Layout from '@layouts/Layout.astro';
 
-import imageWorks01 from '@assets/image-works01.jpg';
-import imageWorks02 from '@assets/image-works02.jpg';
-import imageWorks03 from '@assets/image-works03.jpg';
-
-const works = [
-  {
-    client: 'クライアント名1',
-    title: '実績1',
-    image: imageWorks01,
-  },
-  {
-    client: 'クライアント名2',
-    title: '実績2',
-    image: imageWorks02,
-  },
-  {
-    client: 'クライアント名3',
-    title: '実績3',
-    image: imageWorks03,
-  },
-];
+import { getWorks } from '../../lib/microcms';
+const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail'] });
 
 const title = 'ブログ';
 const description = 'sdenvに関するブログの一覧です。';
@@ -36,9 +17,14 @@ const description = 'sdenvに関するブログの一覧です。';
       class="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-[calc(56/1440*100vw)] 2xl:gap-14"
     >
       {
-        works.map((work) => (
+        response.contents?.map((content) => (
           <li class="contents">
-            <LinkCard image={work.image} title={work.title} client={work.client} />
+            <LinkCard
+              link={`/works/${content.id}`}
+              image={content.thumbnail}
+              title={content.title}
+              titleSub={content.titleSub}
+            />
           </li>
         ))
       }

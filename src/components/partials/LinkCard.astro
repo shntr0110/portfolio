@@ -1,11 +1,31 @@
 ---
-const { image, title, client } = Astro.props;
+const { link, image, title, titleSub } = Astro.props;
 ---
 
-<a href="/" class="row-span-3 grid w-full grid-rows-subgrid gap-0">
-  <div class="aspect-[1.5] w-full">
-    <img src={image.src} alt={title} class="size-full object-cover" />
+<a
+  x-data="hover"
+  @mouseenter="rollEnter"
+  @mouseleave="rollLeave"
+  data-enter-time="500"
+  data-leave-time="700"
+  href={link}
+  class="row-span-3 grid w-full grid-rows-subgrid gap-0"
+>
+  <div class="aspect-[1.5] w-full overflow-hidden">
+    <img
+      src={image.url}
+      alt={title}
+      class="size-full object-cover transition-transform duration-500 [.is-hover_&]:scale-105 [.is-hover_&]:duration-700"
+    />
   </div>
-  <p class="mt-4 text-20 font-bold leading-160 md:mt-5">{client}</p>
-  <p class="text-16 font-bold leading-160 md:text-18">{title}</p>
+  <p
+    class="mt-4 text-20 font-bold leading-160 transition-colors duration-500 md:mt-5 [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
+  >
+    {title}
+  </p>
+  <p
+    class="text-16 font-bold leading-160 transition-colors duration-500 md:text-18 [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
+  >
+    {titleSub}
+  </p>
 </a>
