@@ -15,7 +15,7 @@ const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail
         class="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-[calc(56/1440*100vw)] 2xl:gap-14"
       >
         {
-          response.contents?.map((content) => (
+          response.contents?.slice(0, 3)?.map((content) => (
             <li class="contents">
               <LinkCard
                 link={`/works/${content.id}`}
