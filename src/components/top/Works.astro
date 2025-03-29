@@ -12,7 +12,7 @@ const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail
     <SectionTitle title="制作実績" titleEn="Works" />
     <div class="mt-12 lg:mt-14">
       <ul
-        class="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-[calc(56/1440*100vw)] 2xl:gap-14"
+        class="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-[calc(40/1440*100vw)] lg:grid-cols-3 2xl:gap-10"
       >
         {
           response.contents?.slice(0, 3)?.map((content) => (

@@ -25,13 +25,13 @@ const description = 'sdenvに関するブログの一覧です。';
 
 <Layout title={title} description={description}>
   <Hero title={work.title} titleSub={work.titleSub} />
-  <div class="container my-[100px] lg:my-[120px]">
+  <div class="container mb-[120px] mt-[100px] lg:mb-40 lg:mt-[120px]">
     <div class="aspect-[1.8] w-full border border-solid border-black">
       <img src={work.thumbnail?.url} alt="" class="size-full object-cover" />
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">サイトURL</h2>
-      <p class="mt-[15px] lg:mt-[20px]">
+      <p class="mt-[15px]">
         <a
           href={work.siteUrl}
           target="_blank"
@@ -42,15 +42,15 @@ const description = 'sdenvに関するブログの一覧です。';
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">概要</h2>
-      <p class="mt-5 text-16 leading-160 lg:mt-[30px]">{work.description}</p>
+      <p class="mt-[15px] text-16 leading-160">{work.description}</p>
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">制作期間</h2>
-      <p class="mt-5 text-16 leading-160 lg:mt-[30px]">{work.period}</p>
+      <p class="mt-[15px] text-16 leading-160">{work.period}</p>
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">使用ツール・技術</h2>
-      <ul class="mt-5 flex flex-col gap-3 lg:mt-[30px]">
+      <ul class="mt-[15px] flex flex-col gap-3">
         {
           work.technologies.map((technology) => (
             <li class="relative pl-[18px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-blue">

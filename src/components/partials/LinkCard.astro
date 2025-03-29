@@ -9,9 +9,9 @@ const { link, image, title, titleSub } = Astro.props;
   data-enter-time="500"
   data-leave-time="700"
   href={link}
-  class="row-span-3 grid w-full grid-rows-subgrid gap-0"
+  class="row-span-3 grid w-full grid-rows-subgrid gap-0 rounded-[10px] bg-white"
 >
-  <div class="aspect-[1.5] w-full overflow-hidden">
+  <div class="aspect-[1.5] w-full overflow-hidden rounded-t-[10px]">
     <img
       src={image.url}
       alt={title}
@@ -19,12 +19,12 @@ const { link, image, title, titleSub } = Astro.props;
     />
   </div>
   <p
-    class="mt-4 text-18 font-bold leading-160 transition-colors duration-500 md:mt-5 [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
+    class="mt-4 px-5 text-16 font-bold leading-160 transition-colors duration-500 md:mt-5 lg:text-[17px] [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
   >
     {title}
   </p>
   <p
-    class="text-14 leading-160 transition-colors duration-500 md:text-18 [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
+    class="px-5 pb-6 text-13 leading-160 transition-colors duration-500 md:text-16 lg:text-14 [.is-hover_&]:text-blue [.is-hover_&]:duration-500"
   >
     {titleSub}
   </p>

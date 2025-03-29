@@ -12,9 +12,9 @@ const description = 'sdenvに関するブログの一覧です。';
 
 <Layout title={title} description={description}>
   <Hero title=`制作実績` titleEn=`works` />
-  <div class="container mb-[100px] mt-[80px] lg:my-[120px]">
+  <div class="container mb-[120px] mt-[80px] lg:mb-40 lg:mt-[120px]">
     <ul
-      class="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-[calc(56/1440*100vw)] 2xl:gap-14"
+      class="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-[calc(40/1440*100vw)] lg:grid-cols-3 2xl:gap-10"
     >
       {
         response.contents?.map((content) => (
