@@ -76,24 +76,24 @@ const navItems = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title
-      set:html={[!isHome && Astro.props.title, siteTitle, isHome && Astro.props.tagline]
-        .filter(Boolean)
-        .join(' &#8211; ')}
-    />
+    <title set:html={[!isHome && Astro.props.title, siteTitle].filter(Boolean).join(' &#124; ')} />
+
+    <meta name="robots" content="noindex" />
+
+    <script src="../scripts/main.ts"></script>
 
     {description && <meta name="description" content={description} />}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={`@${siteTwitterId}`} />
-    <meta name="twitter:title" content={isHome ? siteTitle : Astro.props.title} />
-
-    <meta property="og:title" content={isHome ? Astro.props.tagline : Astro.props.title} />
+    <meta property="og:title" content={isHome ? siteTitle : Astro.props.title} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content={resolvedOgImage} />
     {canonicalURL && <meta property="og:url" content={canonicalURL} />}
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:locale" content={`${siteLang}_${siteRegion}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={`@${siteTwitterId}`} />
+    <meta name="twitter:title" content={isHome ? siteTitle : Astro.props.title} />
+    <meta name="twitter:image" content={resolvedOgImage} />
 
     <link rel="apple-touch-icon" href={appleTouchIconImage.src} />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
@@ -105,8 +105,6 @@ const navItems = [
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
-
-    <script src="../scripts/main.ts"></script>
   </head>
 
   <body>

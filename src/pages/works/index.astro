@@ -6,8 +6,8 @@ import Layout from '@layouts/Layout.astro';
 import { getWorks } from '../../lib/microcms';
 const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail'] });
 
-const title = 'ブログ';
-const description = 'sdenvに関するブログの一覧です。';
+const title = '制作実績';
+const description = '私のこれまでの制作実績をご紹介します。';
 ---
 
 <Layout title={title} description={description}>

@@ -19,8 +19,8 @@ export async function getStaticPaths() {
 const { workId } = Astro.params;
 const work = await getWorkDetail(workId as string);
 
-const title = 'ブログ';
-const description = 'sdenvに関するブログの一覧です。';
+const title = '制作実績:' + work.title;
+const description = '制作実績の概要や使用したツール・技術についてご紹介します。';
 ---
 
 <Layout title={title} description={description}>
