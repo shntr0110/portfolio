@@ -9,7 +9,7 @@ const { link, image, title, titleSub } = Astro.props;
   data-enter-time="500"
   data-leave-time="700"
   href={link}
-  class="row-span-3 grid w-full grid-rows-subgrid gap-0 rounded-[10px] bg-white shadow-md"
+  class="row-span-3 grid w-full grid-rows-subgrid gap-0 rounded-[10px] bg-white drop-shadow-[0_0_8px_rgba(0,0,0,0.15)] transition-[filter] duration-500 [.is-hover&]:drop-shadow-[0_0_8px_rgba(0,0,0,0.3)]"
 >
   <div class="aspect-[1.5] w-full overflow-hidden rounded-t-[10px]">
     <img
