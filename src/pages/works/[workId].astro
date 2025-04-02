@@ -42,10 +42,10 @@ const description = '制作実績の概要や使用したツール・技術に�
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">概要</h2>
-      <p class="mt-[15px] text-16 leading-160">{work.description}</p>
+      <div class="mt-[15px] text-16 leading-200" set:html={work.description} />
     </div>
     <div class="mt-[60px] lg:mt-20">
-      <h2 class="works-heading">制作期間</h2>
+      <h2 class="works-heading">コーディング実装期間</h2>
       <p class="mt-[15px] text-16 leading-160">{work.period}</p>
     </div>
     <div class="mt-[60px] lg:mt-20">
