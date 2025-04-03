@@ -24,7 +24,7 @@
     "@tailwindcss/container-queries": "0.1.1",
     "@vercel/edge": "1.2.1",
     "alpinejs": "3.14.8",
-    "astro": "5.4.1",
+    "astro": "5.5.6",
     "astro-icon": "1.1.5",
     "microcms-js-sdk": "3.2.0",
     "postcss-fluid-sizing-function": "0.0.2",
