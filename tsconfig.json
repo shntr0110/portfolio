@@ -1,7 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "module": "ESNext",
     "verbatimModuleSyntax": false,
     "types": ["vitest/importMeta"],
     "baseUrl": ".",

@@ -31,18 +31,14 @@ const description = '制作実績の概要や使用したツール・技術に�
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">サイトURL</h2>
-      <p class="mt-[15px]">
-        <a
-          href={work.siteUrl}
-          target="_blank"
-          rel="noopener"
-          class="text-16 leading-160 text-blue link">{work.siteUrl}</a
-        >
-      </p>
+      <div
+        class="mt-[15px] [&_a]:text-16 [&_a]:leading-160 [&_a]:text-blue [&_a]:link [&_p]:leading-200"
+        set:html={work.siteUrl}
+      />
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">概要</h2>
-      <div class="mt-[15px] text-16 leading-200" set:html={work.description} />
+      <div class="mt-[15px] [&_p]:text-16 [&_p]:leading-200" set:html={work.description} />
     </div>
     <div class="mt-[60px] lg:mt-20">
       <h2 class="works-heading">コーディング実装期間</h2>
