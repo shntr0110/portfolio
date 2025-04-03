@@ -1,18 +1,14 @@
 import Alpine from 'alpinejs';
 
-const name = 'example';
+const name = 'lenis';
 
 const store = {
-  count: 0,
-
   init() {
-    console.log('example store: init');
+    if (import.meta.env.MODE !== 'production') {
+      console.log('lenis store: init');
+    }
   },
-
-  increment() {
-    console.log('example store: increment');
-    this.count++;
-  },
+  instance: null,
 };
 
 Alpine.store(name, store);

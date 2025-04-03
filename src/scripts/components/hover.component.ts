@@ -19,7 +19,6 @@ Alpine.data('hover', () => {
       }
 
       window.addEventListener('pageshow', () => {
-        console.log('rollLeave');
         this.rollLeave();
       });
     },

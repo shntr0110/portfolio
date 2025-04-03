@@ -25,6 +25,11 @@ html {
   overflow-wrap: break-word;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
 body {
   min-height: 100svh;
   color: theme(colors.black);
