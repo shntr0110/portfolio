@@ -7,8 +7,55 @@ interface Props {
 const { link, name } = Astro.props;
 ---
 
-<a href={link} class="inline-block rounded-full bg-blue px-12 py-2.5">
-  <span class="text-16 font-bold leading-160 text-white">
-    {name}
-  </span>
+<a
+  x-data="hover"
+  @mouseenter="rollEnter"
+  @mouseleave="rollLeave"
+  data-enter-time="500"
+  data-leave-time="700"
+  class="bg-darkBlue button flex w-fit items-center justify-between gap-10 rounded-full py-4 pl-12 pr-9"
+  href={link}
+>
+  <div class="relative grid place-content-center overflow-hidden">
+    <span class="button-before-text text-16 font-bold leading-160 text-white">
+      {name}
+    </span>
+    <div class="button-after-text text-16 font-bold leading-160 text-white">
+      {name}
+    </div>
+  </div>
+  <div class="relative size-auto overflow-hidden">
+    <svg
+      class="button-before-arrow relative size-6"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6667 17H4V15H26.6667V17Z" fill="white"
+      ></path>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M26.5858 16L21.2929 10.7071L22.7071 9.29285L29.4142 16L22.7071 22.7071L21.2929 21.2928L26.5858 16Z"
+        fill="white"></path>
+    </svg>
+    <svg
+      class="button-after-arrow"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6667 17H4V15H26.6667V17Z" fill="white"
+      ></path>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M26.5858 16L21.2929 10.7071L22.7071 9.29285L29.4142 16L22.7071 22.7071L21.2929 21.2928L26.5858 16Z"
+        fill="white"></path>
+    </svg>
+  </div>
 </a>

@@ -90,7 +90,7 @@ const container = plugin(function ({ addComponents }) {
         paddingLeft: rem(97),
       },
       '@screen lg': {
-        maxWidth: rem(1100),
+        maxWidth: rem(1150),
       },
     },
     '.container-sm': {
@@ -136,6 +136,7 @@ export default {
         black: '#333333',
         blue: '#388DB9',
         lightBlue: '#c6eaff',
+        darkBlue: '#22283F',
       },
       fontSize: {
         ...[
