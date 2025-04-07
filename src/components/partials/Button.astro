@@ -13,16 +13,13 @@ const { link, name } = Astro.props;
   @mouseleave="rollLeave"
   data-enter-time="500"
   data-leave-time="700"
-  class="bg-darkBlue button flex w-fit items-center justify-between gap-10 rounded-full py-4 pl-12 pr-9"
+  class="bg-darkBlue button flex w-fit items-center justify-between gap-10 rounded-full py-3 pl-10 pr-7 lg:py-4 lg:pl-12 lg:pr-9"
   href={link}
 >
   <div class="relative grid place-content-center overflow-hidden">
-    <span class="button-before-text text-16 font-bold leading-160 text-white">
+    <span class="button-before-text text-14 font-bold leading-160 text-white lg:text-16">
       {name}
     </span>
-    <div class="button-after-text text-16 font-bold leading-160 text-white">
-      {name}
-    </div>
   </div>
   <div class="relative size-auto overflow-hidden">
     <svg
