@@ -136,7 +136,7 @@ export default {
         black: '#333333',
         blue: '#388DB9',
         lightBlue: '#c6eaff',
-        darkBlue: '#22283F',
+        darkBlue: '#054A6E',
       },
       fontSize: {
         ...[
