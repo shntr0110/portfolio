@@ -21,7 +21,7 @@ Alpine.data('scroll', () => {
       });
 
       //get scroll value
-      lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+      lenis.on('scroll', ({ scroll, direction }) => {
         this.scrollDirection = scroll > 200 && direction !== -1;
       });
 
