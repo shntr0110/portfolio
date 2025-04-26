@@ -116,8 +116,8 @@ const navItems = [
        */
     }
 
-    <Header navItems={navItems} isHome={isHome} />
-    <main class="xs:pt-0 pt-[var(--header-height)]">
+    <Header isHome={isHome} />
+    <main>
       <Nav />
       <slot />
     </main>

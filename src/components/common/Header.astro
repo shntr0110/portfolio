@@ -1,49 +1,63 @@
 ---
+import NavSp from './Nav-sp.astro';
 interface Props {
-  navItems: {
-    link: string;
-    name: string;
-  }[];
   isHome: boolean;
 }
 
-const { navItems, isHome } = Astro.props;
+const { isHome } = Astro.props;
 ---
 
 <header
-  class="xs:hidden fixed left-0 top-0 z-50 block w-full bg-blue px-[15px] py-5 lg:px-10 lg:py-6"
+  x-data="header"
+  class="fixed left-0 top-0 z-[100] block w-full px-[15px] py-5 md:hidden lg:px-10 lg:py-6"
+  @scroll.document="onScroll"
 >
-  <div class="flex items-center justify-between">
+  <div
+    class="bg-blueGradient absolute left-0 top-0 z-[1] size-full transition-all duration-400"
+    :class="isScrolled ? 'opacity-100' : 'opacity-0'"
+  >
+  </div>
+  <div class="relative z-[3] flex items-center justify-between">
     {
       isHome ? (
         <h1 class="leading-160">
-          <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link">
+          <a href="/" class="block text-16 font-bold capitalize leading-100 text-blue link">
             tokuyama shintaro
           </a>
         </h1>
       ) : (
         <div class="leading-160">
-          <a href="/" class="block text-16 font-bold capitalize leading-100 text-white link">
+          <a href="/" class="block text-16 font-bold capitalize leading-100 text-blue link">
             tokuyama shintaro
           </a>
         </div>
       )
     }
-    <nav>
-      <ul class="flex items-center gap-2.5 lg:gap-10">
-        {
-          navItems.map((navItem) => (
-            <li class="leading-160">
-              <a
-                href={navItem.link}
-                class="block text-12 font-bold capitalize leading-100 text-white link lg:text-16"
-              >
-                {navItem.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <button
+      @click="spMenuIsOpen =  !spMenuIsOpen"
+      aria-label="Open menu"
+      class="grid size-[30px] place-items-center"
+    >
+      <span
+        class="relative h-2.5 w-full"
+        style="--startDuration: 200ms;--endDuration: 150ms;--delay: 100ms"
+      >
+        <span
+          :class="spMenuIsOpen ? 'top-1/2 -translate-y-1/2 rotate-[30deg]' : 'rotate-0'"
+          class="absolute left-1/2 top-0 h-[2px] w-full -translate-x-1/2 bg-blue transition-all duration-300"
+        ></span>
+        <span
+          :class="spMenuIsOpen ? 'bottom-1/2 translate-y-1/2 rotate-[-30deg]' : 'rotate-0'"
+          class="absolute bottom-0 left-1/2 h-[2px] w-full -translate-x-1/2 bg-blue transition-all duration-300"
+        ></span>
+      </span>
+    </button>
+  </div>
+  <div
+    data-lenis-prevent
+    :class="spMenuIsOpen ? 'pointer-events-auto opacity-100 transition-all duration-300' : 'pointer-events-none opacity-0 transition-all duration-300'"
+    class="bg-lightYellow absolute left-0 top-0 z-[2] h-lvh w-full overflow-auto pt-[var(--header-height)]"
+  >
+    <NavSp />
   </div>
 </header>

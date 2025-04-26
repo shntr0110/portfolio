@@ -132,6 +132,9 @@ export default {
         notoSansJp: ['Noto Sans JP', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
+      height: {
+        headerChange: '106px',
+      },
       colors: {
         white: '#ffffff',
         lightGray: '#FAFAFA',

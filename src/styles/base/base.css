@@ -1,13 +1,6 @@
 :root {
-  --header-height: calc(56 / 16 * 1rem);
+  --header-height: calc(70 / 16 * 1rem);
 }
-
-@screen lg {
-  :root {
-    --header-height: calc(64 / 16 * 1rem);
-  }
-}
-
 html,
 body {
   background-color: theme(colors.lightYellow);
@@ -37,4 +30,10 @@ body {
   line-height: 1;
   font-family: theme(fontFamily.notoSansJp);
   letter-spacing: 0.02em;
+}
+
+@layer base {
+  .headerChange {
+    height: 106px;
+  }
 }
