@@ -6,6 +6,7 @@ import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
 
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import Nav from '../components/common/Nav.astro';
 
 interface BaseProps {
   isHome?: false | undefined;
@@ -102,7 +103,7 @@ const navItems = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -116,7 +117,8 @@ const navItems = [
     }
 
     <Header navItems={navItems} isHome={isHome} />
-    <main class="pt-[var(--header-height)]">
+    <main class="xs:pt-0 pt-[var(--header-height)]">
+      <Nav />
       <slot />
     </main>
     <Footer />

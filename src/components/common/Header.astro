@@ -10,7 +10,9 @@ interface Props {
 const { navItems, isHome } = Astro.props;
 ---
 
-<header class="fixed left-0 top-0 z-50 w-full bg-blue px-[15px] py-5 lg:px-10 lg:py-6">
+<header
+  class="xs:hidden fixed left-0 top-0 z-50 block w-full bg-blue px-[15px] py-5 lg:px-10 lg:py-6"
+>
   <div class="flex items-center justify-between">
     {
       isHome ? (

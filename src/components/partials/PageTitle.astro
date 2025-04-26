@@ -2,24 +2,15 @@
 interface Props {
   title: string;
   titleEn?: string;
-  titleSub?: string;
 }
 
-const { title, titleEn, titleSub } = Astro.props;
+const { title, titleEn } = Astro.props;
 ---
 
-{
-  titleEn ? (
-    <h1 class="flex w-fit flex-col">
-      <span class="text-18 font-bold leading-140 tracking-02 text-blue">{title}</span>
-      <span class="text-48 font-bold capitalize leading-140 tracking-02 lg:text-56">{titleEn}</span>
-    </h1>
-  ) : titleSub ? (
-    <>
-      <h1 class="text-36 font-bold capitalize leading-140 tracking-02 lg:text-48">{title}</h1>
-      <p class="mt-5 text-20 leading-140 tracking-02 lg:text-24">{titleSub}</p>
-    </>
-  ) : (
-    <h1 class="w-fit text-36 font-bold capitalize leading-140 tracking-02 lg:text-48">{title}</h1>
-  )
-}
+<h1 class="flex w-fit flex-col">
+  <span
+    class="font-poppins text-48 font-semibold capitalize leading-100 tracking-02 text-white lg:text-[96px]"
+    >{titleEn}</span
+  >
+  <span class="text-20 font-bold leading-160 tracking-02 text-white">{title}</span>
+</h1>

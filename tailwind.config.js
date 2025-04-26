@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Loads CSS files through Tailwind’s plugin system to enable IntelliSense support.
+ * Loads CSS files through Tailwind's plugin system to enable IntelliSense support.
  *
  * This plugin scans CSS files from `src/styles/{base,components,utilities}` and appends them to
  * their respective layers.
@@ -86,11 +86,12 @@ const container = plugin(function ({ addComponents }) {
       marginRight: 'auto',
       marginLeft: 'auto',
       '@screen md': {
-        paddingRight: rem(97),
-        paddingLeft: rem(97),
+        paddingRight: rem(240),
+        paddingLeft: rem(40),
       },
       '@screen lg': {
-        maxWidth: rem(1150),
+        paddingLeft: rem(100),
+        maxWidth: rem(1100),
       },
     },
     '.container-sm': {
@@ -117,7 +118,7 @@ export default {
     hoverOnlyWhenSupported: true,
   },
   theme: {
-    screen: {
+    screens: {
       xs: '540px',
       sm: '640px',
       md: '768px',
@@ -129,14 +130,19 @@ export default {
       fontFamily: {
         sans: ['sans-serif'],
         notoSansJp: ['Noto Sans JP', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
         white: '#ffffff',
         lightGray: '#FAFAFA',
+        lightYellow: '#FAF6E9',
         black: '#333333',
-        blue: '#388DB9',
-        lightBlue: '#c6eaff',
-        darkBlue: '#054A6E',
+        blue: '#0088A3',
+        lightBlue: '#8ADCF3',
+      },
+      backgroundImage: {
+        blueGradient:
+          'linear-gradient(24deg,rgba(138, 220, 243, 1) 3%, rgba(255, 251, 230, 1) 100%);',
       },
       fontSize: {
         ...[
