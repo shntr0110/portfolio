@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Hero from '@components/partials/Hero.astro';
 import Button from '@components/partials/Button.astro';
 
 import { getWorks, getWorkDetail } from '../../lib/microcms';
@@ -19,42 +18,73 @@ export async function getStaticPaths() {
 const { workId } = Astro.params;
 const work = await getWorkDetail(workId as string);
 
+const worksDetails = [
+  {
+    name: '種別',
+    data: '種別が入ります',
+  },
+  {
+    name: '制作期間',
+    data: work.period,
+  },
+  {
+    name: '技術スタック',
+    data: '技術スタックが入ります',
+  },
+];
+
 const title = '制作実績:' + work.title;
 const description = '制作実績の概要や使用したツール・技術についてご紹介します。';
 ---
 
 <Layout title={title} description={description}>
-  <div class="container mb-[120px] lg:mb-40">
-    <div class="aspect-[1.6] w-full border border-solid border-[#cccccc] lg:aspect-[1.8]">
-      <img src={work.thumbnail?.url} alt="" class="size-full object-cover" />
+  <div class="px-6 pt-[120px] md:pl-10 md:pr-[240px] md:pt-[80px] lg:pl-[100px] lg:pr-0 lg:pt-0">
+    <div
+      class="flex flex-col gap-[60px] lg:flex-row lg:justify-between lg:gap-[calc(100/1440*100vw)]"
+    >
+      <div class="w-full lg:max-w-[calc(486/1440*100vw)] lg:self-center lg:py-20">
+        <h1 class="text-28 font-bold leading-160 tracking-normal lg:text-32">
+          {work.title}
+        </h1>
+        <ul class="mt-10 flex flex-col gap-2 lg:mt-[60px]">
+          {
+            worksDetails.map((workDetail) => (
+              <li class="flex gap-6">
+                <div class="w-[100px] text-16 font-bold leading-160 tracking-normal">
+                  {workDetail.name}
+                </div>
+                <div class="text-16 leading-160 tracking-normal">{workDetail.data}</div>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-7 lg:mt-9">
+          <a
+            href="/"
+            class="flex w-fit items-center gap-2 text-16 font-bold leading-160 tracking-normal text-blue underline link"
+          >
+            <span> View Site </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="inline size-[14px]"
+              fill="#0088A3"
+              ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"
+              ></path></svg
+            >
+          </a>
+        </div>
+      </div>
+      <div class="aspect-[375/225] min-h-0 w-full md:aspect-[800/500] lg:w-3/5">
+        <img src={work.thumbnail?.url} alt="" class="size-full object-cover" />
+      </div>
     </div>
-    <div class="mt-[60px] lg:mt-20">
-      <h2 class="works-heading">サイトURL</h2>
-      <div
-        class="mt-[15px] [&_a]:text-16 [&_a]:leading-160 [&_a]:text-blue [&_a]:link [&_p]:leading-200"
-        set:html={work.siteUrl}
-      />
-    </div>
-    <div class="mt-[60px] lg:mt-20">
-      <h2 class="works-heading">プロジェクト詳細</h2>
-      <div class="mt-[15px] [&_p]:text-16 [&_p]:leading-200" set:html={work.description} />
-    </div>
-    <div class="mt-[60px] lg:mt-20">
-      <h2 class="works-heading">コーディング実装期間</h2>
-      <p class="mt-[15px] text-16 leading-160">{work.period}</p>
-    </div>
-    <div class="mt-[60px] lg:mt-20">
-      <h2 class="works-heading">使用ツール・技術</h2>
-      <ul class="mt-[15px] flex flex-col gap-3">
-        {
-          work.technologies.map((technology) => (
-            <li class="relative pl-[18px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-blue">
-              <p class="text-16 leading-160">{technology.name}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+  </div>
+  <div class="container mb-[160px] mt-[100px] lg:mb-[200px] lg:mt-[120px]">
+    <h2 class="works-heading">プロジェクト詳細</h2>
+    <div class="mt-[15px] [&_p]:text-16 [&_p]:leading-200" set:html={work.description} />
     <div class="mx-auto mt-[60px] w-fit lg:mt-20">
       <Button link="/works" name="一覧へ戻る" />
     </div>

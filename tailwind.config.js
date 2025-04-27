@@ -131,6 +131,7 @@ export default {
         sans: ['sans-serif'],
         notoSansJp: ['Noto Sans JP', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+        licorice: ['Licorice', 'cursive'],
       },
       height: {
         headerChange: '106px',
