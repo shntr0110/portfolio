@@ -110,7 +110,7 @@ const canonicalURL = (() => {
 
     {isDetail ? <HeaderDetail /> : <Header isHome={isHome} />}
     <main>
-      <Nav isDetail={isDetail} />
+      <Nav isHome={isHome} isDetail={isDetail} />
       <slot />
     </main>
     <Footer />

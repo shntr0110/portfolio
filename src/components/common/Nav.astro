@@ -6,14 +6,15 @@ import ImageAnchorWorks from '@assets/image_anchor-works.png';
 
 interface Props {
   isDetail?: boolean;
+  isHome?: boolean;
 }
 
-const { isDetail } = Astro.props;
+const { isHome, isDetail } = Astro.props;
 ---
 
 {
   isDetail ? (
-    <div class="fixed bottom-[460px] left-1/2 hidden w-full max-w-screen-2xl -translate-x-1/2 lg:block">
+    <div class="fixed bottom-[460px] left-1/2 z-[100] hidden w-full max-w-screen-2xl -translate-x-1/2 lg:block">
       <div class="absolute right-10 w-[121px]">
         <img src={ImageNav.src} alt="" class="size-full object-contain" />
         <a
@@ -37,7 +38,7 @@ const { isDetail } = Astro.props;
       </div>
     </div>
   ) : (
-    <div class="fixed left-1/2 top-[220px] hidden w-full max-w-screen-2xl -translate-x-1/2 md:block">
+    <div class="fixed bottom-[460px] left-1/2 z-[100] hidden w-full max-w-screen-2xl -translate-x-1/2 md:block">
       <div class="absolute right-10 w-[121px]">
         <img src={ImageNav.src} alt="" class="size-full object-contain" />
         <a

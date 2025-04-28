@@ -146,7 +146,7 @@ export default {
       },
       backgroundImage: {
         blueGradient:
-          'linear-gradient(24deg,rgba(138, 220, 243, 1) 3%, rgba(255, 251, 230, 1) 100%);',
+          'linear-gradient(36deg,rgba(138, 220, 243, 1) 3%, rgba(255, 251, 230, 1) 100%);',
       },
       fontSize: {
         ...[
