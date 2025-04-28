@@ -3,28 +3,62 @@ import ImageNav from '@assets/image_nav.png';
 import ImageAnchorTop from '@assets/image_anchor-top.png';
 import ImageAnchorAbout from '@assets/image_anchor-about.png';
 import ImageAnchorWorks from '@assets/image_anchor-works.png';
+
+interface Props {
+  isDetail?: boolean;
+}
+
+const { isDetail } = Astro.props;
 ---
 
-<div class="fixed left-1/2 top-[220px] hidden w-full max-w-screen-2xl -translate-x-1/2 md:block">
-  <div class="absolute right-10 w-[121px]">
-    <img src={ImageNav.src} alt="" class="size-full object-contain" />
-    <a
-      href="/"
-      class="absolute left-1/2 top-[30px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
-    >
-      <img src={ImageAnchorTop.src} alt="" class="size-full object-cover" />
-    </a>
-    <a
-      href="/works"
-      class="absolute left-1/2 top-[98px] w-[160px] -translate-x-1/2 -rotate-2 transition-transform duration-200 hover:-rotate-6"
-    >
-      <img src={ImageAnchorWorks.src} alt="" class="size-full object-cover" />
-    </a>
-    <a
-      href="/about"
-      class="absolute left-1/2 top-[166px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
-    >
-      <img src={ImageAnchorAbout.src} alt="" class="size-full object-cover" />
-    </a>
-  </div>
-</div>
+{
+  isDetail ? (
+    <div class="fixed bottom-[460px] left-1/2 hidden w-full max-w-screen-2xl -translate-x-1/2 lg:block">
+      <div class="absolute right-10 w-[121px]">
+        <img src={ImageNav.src} alt="" class="size-full object-contain" />
+        <a
+          href="/"
+          class="absolute left-1/2 top-[30px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
+        >
+          <img src={ImageAnchorTop.src} alt="" class="size-full object-cover" />
+        </a>
+        <a
+          href="/works"
+          class="absolute left-1/2 top-[98px] w-[160px] -translate-x-1/2 -rotate-2 transition-transform duration-200 hover:-rotate-6"
+        >
+          <img src={ImageAnchorWorks.src} alt="" class="size-full object-cover" />
+        </a>
+        <a
+          href="/about"
+          class="absolute left-1/2 top-[166px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
+        >
+          <img src={ImageAnchorAbout.src} alt="" class="size-full object-cover" />
+        </a>
+      </div>
+    </div>
+  ) : (
+    <div class="fixed left-1/2 top-[220px] hidden w-full max-w-screen-2xl -translate-x-1/2 md:block">
+      <div class="absolute right-10 w-[121px]">
+        <img src={ImageNav.src} alt="" class="size-full object-contain" />
+        <a
+          href="/"
+          class="absolute left-1/2 top-[30px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
+        >
+          <img src={ImageAnchorTop.src} alt="" class="size-full object-cover" />
+        </a>
+        <a
+          href="/works"
+          class="absolute left-1/2 top-[98px] w-[160px] -translate-x-1/2 -rotate-2 transition-transform duration-200 hover:-rotate-6"
+        >
+          <img src={ImageAnchorWorks.src} alt="" class="size-full object-cover" />
+        </a>
+        <a
+          href="/about"
+          class="absolute left-1/2 top-[166px] w-[160px] -translate-x-1/2 rotate-2 transition-transform duration-200 hover:rotate-6"
+        >
+          <img src={ImageAnchorAbout.src} alt="" class="size-full object-cover" />
+        </a>
+      </div>
+    </div>
+  )
+}

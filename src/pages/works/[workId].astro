@@ -28,6 +28,10 @@ const worksDetails = [
     data: work.period,
   },
   {
+    name: '担当範囲',
+    data: work.period,
+  },
+  {
     name: '技術スタック',
     data: '技術スタックが入ります',
   },
@@ -37,8 +41,8 @@ const title = '制作実績:' + work.title;
 const description = '制作実績の概要や使用したツール・技術についてご紹介します。';
 ---
 
-<Layout title={title} description={description}>
-  <div class="px-6 pt-[120px] md:pl-10 md:pr-[240px] md:pt-[80px] lg:pl-[100px] lg:pr-0 lg:pt-0">
+<Layout title={title} description={description} isDetail>
+  <div class="px-6 pt-[120px] md:px-10 lg:pl-[100px] lg:pr-0 lg:pt-0">
     <div
       class="flex flex-col gap-[60px] lg:flex-row lg:justify-between lg:gap-[calc(100/1440*100vw)]"
     >
@@ -82,7 +86,9 @@ const description = '制作実績の概要や使用したツール・技術に�
       </div>
     </div>
   </div>
-  <div class="container mb-[160px] mt-[100px] lg:mb-[200px] lg:mt-[120px]">
+  <div
+    class="container mb-[160px] mt-[100px] md:px-10 lg:mb-[200px] lg:mt-[120px] lg:pl-[100px] lg:pr-[240px]"
+  >
     <h2 class="works-heading">プロジェクト詳細</h2>
     <div class="mt-[15px] [&_p]:text-16 [&_p]:leading-200" set:html={work.description} />
     <div class="mx-auto mt-[60px] w-fit lg:mt-20">

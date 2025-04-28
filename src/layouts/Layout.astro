@@ -5,12 +5,14 @@ import defaultOpenGraphImage from '../assets/opengraph-image.png';
 import { siteLang, siteRegion, siteTitle, siteTwitterId } from '../consts';
 
 import Header from '../components/common/Header.astro';
+import HeaderDetail from '../components/common/Header-detail.astro';
 import Footer from '../components/common/Footer.astro';
 import Nav from '../components/common/Nav.astro';
 
 interface BaseProps {
   isHome?: false | undefined;
   is404?: false | undefined;
+  isDetail?: boolean;
   title: string;
   description?: string | undefined;
   ogType?: 'website' | 'article' | undefined;
@@ -34,7 +36,12 @@ type Props = GeneralProps | HomeProps | NotFoundProps;
 const isHome = Astro.props.isHome === true;
 const is404 = Astro.props.is404 === true;
 
-const { description, ogType = 'website', ogImage = defaultOpenGraphImage.src } = Astro.props;
+const {
+  description,
+  ogType = 'website',
+  ogImage = defaultOpenGraphImage.src,
+  isDetail,
+} = Astro.props;
 
 const resolvedOgImage = new URL(ogImage, Astro.site);
 
@@ -101,9 +108,9 @@ const canonicalURL = (() => {
        */
     }
 
-    <Header isHome={isHome} />
+    {isDetail ? <HeaderDetail /> : <Header isHome={isHome} />}
     <main>
-      <Nav />
+      <Nav isDetail={isDetail} />
       <slot />
     </main>
     <Footer />
