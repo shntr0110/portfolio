@@ -15,14 +15,12 @@ export type Works = {
   thumbnail: {
     url: string;
   };
-  siteUrl: string;
-  description: string;
+  matter: string;
   period: string;
-  technologies: [
-    {
-      name: string;
-    },
-  ];
+  scope: string;
+  stacks: string;
+  link: string;
+  description: string;
 } & MicroCMSListContent;
 
 // APIの呼び出し

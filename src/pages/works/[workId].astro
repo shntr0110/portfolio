@@ -20,20 +20,20 @@ const work = await getWorkDetail(workId as string);
 
 const worksDetails = [
   {
-    name: '種別',
-    data: '種別が入ります',
+    name: '制作内容',
+    data: work.matter,
+  },
+  {
+    name: '担当範囲',
+    data: work.scope,
   },
   {
     name: '制作期間',
     data: work.period,
   },
   {
-    name: '担当範囲',
-    data: work.period,
-  },
-  {
     name: '技術スタック',
-    data: '技術スタックが入ります',
+    data: work.stacks,
   },
 ];
 
@@ -54,7 +54,7 @@ const description = '制作実績の概要や使用したツール・技術に�
           {
             worksDetails.map((workDetail) => (
               <li class="flex gap-6">
-                <div class="w-[100px] text-16 font-bold leading-160 tracking-normal">
+                <div class="w-[100px] shrink-0 text-16 font-bold leading-160 tracking-normal">
                   {workDetail.name}
                 </div>
                 <div class="text-16 leading-160 tracking-normal">{workDetail.data}</div>
@@ -64,7 +64,9 @@ const description = '制作実績の概要や使用したツール・技術に�
         </ul>
         <div class="mt-7 lg:mt-9">
           <a
-            href="/"
+            href={work.link}
+            target="_blank"
+            rel="noopener"
             class="flex w-fit items-center gap-2 text-16 font-bold leading-160 tracking-normal text-blue underline link"
           >
             <span> View Site </span>
