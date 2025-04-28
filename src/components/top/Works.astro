@@ -9,27 +9,29 @@ const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail
 
 <section id="works" class="mt-20 lg:mt-40">
   <div class="container">
-    <SectionTitle title="制作実績" titleEn="Works" />
-    <div class="mt-12 lg:mt-14">
-      <ul
-        class="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-[calc(40/1440*100vw)] lg:grid-cols-3 2xl:gap-10"
-      >
-        {
-          response.contents?.slice(0, 3)?.map((content) => (
-            <li class="contents">
-              <LinkCard
-                link={`/works/${content.id}`}
-                image={content.thumbnail}
-                title={content.title}
-                titleSub={content.titleSub}
-              />
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class="mx-auto mt-12 w-fit lg:mt-14">
-      <Button link="/works" name="制作実績一覧へ" />
+    <div class="flex flex-col justify-between gap-[60px] xl:flex-row xl:gap-[160px]">
+      <SectionTitle title="制作実績" titleEn="Works" />
+      <div class="">
+        <ul
+          class="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-[calc(40/1440*100vw)] 2xl:gap-10"
+        >
+          {
+            response.contents?.slice(0, 4)?.map((content) => (
+              <li class="contents">
+                <LinkCard
+                  link={`/works/${content.id}`}
+                  image={content.thumbnail}
+                  title={content.title}
+                  titleSub={content.titleSub}
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mx-auto mt-12 w-fit lg:mt-14">
+          <Button link="/works" name="制作実績一覧へ" />
+        </div>
+      </div>
     </div>
   </div>
 </section>
