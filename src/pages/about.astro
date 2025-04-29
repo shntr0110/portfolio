@@ -3,6 +3,10 @@ import Hero from '@components/partials/Hero.astro';
 import Layout from '@layouts/Layout.astro';
 import SectionTitle from '@components/partials/SectionTitle.astro';
 import ImageProfile from '@assets/image_profile.jpg';
+import ImageAbout01 from '@assets/image_about01.jpg';
+import ImageAbout02 from '@assets/image_about02.jpg';
+import ImageAbout03 from '@assets/image_about03.jpg';
+import ImageAbout04 from '@assets/image_about04.jpg';
 
 const career = [
   {
@@ -30,6 +34,12 @@ const career = [
     image: '',
   },
   {
+    year: '2023.4',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
     year: '2023.7',
     description:
       'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
@@ -42,6 +52,8 @@ const career = [
     image: '',
   },
 ];
+
+const aboutImages = [ImageAbout01, ImageAbout02, ImageAbout03, ImageAbout04];
 
 const title = '私について';
 const description = '';
@@ -75,8 +87,8 @@ const description = '';
     </div>
   </div>
   <div class="container mt-[120px] lg:mt-[160px]">
-    <h2 class="text-center text-[48px] font-bold leading-160 tracking-normal">
-      エンジニアとして目指す姿
+    <h2 class="text-center text-[38px] font-bold leading-160 tracking-normal lg:text-[48px]">
+      エンジニアとして<br class="xs:hidden" />目指す姿
     </h2>
     <p class="mt-[30px] text-16 leading-160 tracking-normal">
       テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
@@ -101,5 +113,25 @@ const description = '';
       }
     </div>
   </div>
-  <div class="container my-[120px] lg:my-[160px]"></div>
+  <div class="my-[120px] lg:my-[160px]">
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        {
+          Array(3)
+            .fill(null)
+            .map((_, index) => (
+              <div class="slider">
+                {aboutImages.map((aboutImage) => (
+                  <div class="slide-move slider-cardWrapper">
+                    <div class="slider-card">
+                      <img src={aboutImage.src} alt="" class="size-full object-cover" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))
+        }
+      </div>
+    </div>
+  </div>
 </Layout>

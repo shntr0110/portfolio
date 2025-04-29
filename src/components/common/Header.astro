@@ -59,10 +59,6 @@ const { isHome } = Astro.props;
     :class="spMenuIsOpen ? 'pointer-events-auto opacity-100 transition-all duration-300' : 'pointer-events-none opacity-0 transition-all duration-300'"
     class="bg-lightYellow absolute left-0 top-0 z-[2] h-lvh w-full overflow-auto pt-[var(--header-height)]"
   >
-    <div
-      class="relative pb-12 pl-[30px] pt-[2px] before:absolute before:left-[-12px] before:top-0 before:size-6 before:rounded-full before:bg-lightBlue before:content-[''] md:pb-[60px] md:pt-0 md:before:left-[-14px] md:before:size-7 [&:last-child]:pb-0 [&:last-child]:md:pb-0"
-    >
-      <NavSp />
-    </div>
+    <NavSp />
   </div>
 </header>
