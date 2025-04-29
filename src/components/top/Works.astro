@@ -9,7 +9,7 @@ const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail
 
 <section id="works" class="mt-[120px] lg:mt-[200px]">
   <div class="container">
-    <div class="flex flex-col justify-between gap-[60px] xl:flex-row xl:gap-[160px]">
+    <div class="flex flex-col justify-between gap-14 lg:gap-[60px] xl:flex-row xl:gap-[160px]">
       <SectionTitle title="制作実績" titleEn="Works" />
       <div class="">
         <ul
@@ -29,7 +29,7 @@ const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail
           }
         </ul>
         <div class="mx-auto mt-12 w-fit lg:mt-14">
-          <Button link="/works" name="制作実績一覧へ" />
+          <Button link="/works" name="制作実績一覧" />
         </div>
       </div>
     </div>

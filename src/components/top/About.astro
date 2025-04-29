@@ -1,12 +1,15 @@
 ---
 import SectionTitle from '@components/partials/SectionTitle.astro';
+import Button from '@components/partials/Button.astro';
 import ImageProfile from '@assets/image_profile.jpg';
 ---
 
 <section id="about" class="mb-[120px] mt-[80px] lg:mb-[160px] lg:mt-[120px]">
   <div class="container">
     <SectionTitle title="私について" titleEn="About" />
-    <div class="mt-12 flex flex-col items-center gap-[55px] md:flex-row md:items-start lg:mt-14">
+    <div
+      class="mt-14 flex flex-col items-center gap-[55px] md:flex-row md:items-start lg:mt-[60px]"
+    >
       <div
         class="aspect-square w-[300px] shrink-0 overflow-hidden rounded-full md:w-[200px] lg:w-[300px]"
       >
@@ -27,6 +30,9 @@ import ImageProfile from '@assets/image_profile.jpg';
           />
           現在はネヴァーズ株式会社で、フロントエンドエンジニアとしてウェブサイトの制作に携わっています。
         </p>
+        <div class="mx-auto mt-[30px] w-fit md:mx-0">
+          <Button link="/about" name="私について" />
+        </div>
       </div>
     </div>
   </div>

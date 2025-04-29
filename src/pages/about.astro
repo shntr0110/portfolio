@@ -1,0 +1,105 @@
+---
+import Hero from '@components/partials/Hero.astro';
+import Layout from '@layouts/Layout.astro';
+import SectionTitle from '@components/partials/SectionTitle.astro';
+import ImageProfile from '@assets/image_profile.jpg';
+
+const career = [
+  {
+    year: '2018.4',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
+    year: '2019.4',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
+    year: '2021.4',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
+    year: '2022.4',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
+    year: '2023.7',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+  {
+    year: '2024.11',
+    description:
+      'プロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入りますプロフィールテキストが入ります',
+    image: '',
+  },
+];
+
+const title = '私について';
+const description = '';
+---
+
+<Layout title={title} description={description}>
+  <Hero title=`私について` titleEn=`about` />
+  <div class="container mt-[120px] lg:mt-[160px]">
+    <div class="flex flex-col items-center gap-[55px] md:flex-row md:items-start">
+      <div
+        class="aspect-square w-[300px] shrink-0 overflow-hidden rounded-full md:w-[200px] lg:w-[300px]"
+      >
+        <img src={ImageProfile.src} alt="" class="size-full object-cover" />
+      </div>
+      <div class="w-auto">
+        <p class="text-32 font-bold leading-160">徳山 申太郎</p>
+        <p class="mt-5 text-16 leading-160">
+          1995年1月10日生まれ。広島県出身。大学進学を機に横浜へ。<br />
+          横浜国立大学を卒業後、地元広島へ戻り5年間公務員として勤務していました。<br />
+          入札関係業務や、ハローワークの窓口での雇用保険の手続き業務、職業相談の業務などを経験しました。<br
+          />
+          公務員として働く中で、「勉強して何か誇れるものを身につけたい」「目に見える形になるものを生み出す仕事をしたい」という思いを抱くようになり転職を決意しました。<br
+          />
+          公務員を退職後、デジタルハリウッドSTUDIO広島に入学し、ウェブサイト制作の勉強をスタートしました。<br
+          />
+          在学中に株式会社フォノグラムにパートとして入社し、ウェブサイト制作のコーディングを担当。エンジニアとしてのキャリアをスタートさせました。<br
+          />
+          現在はネヴァーズ株式会社で、フロントエンドエンジニアとしてウェブサイトの制作に携わっています。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-[120px] lg:mt-[160px]">
+    <h2 class="text-center text-[48px] font-bold leading-160 tracking-normal">
+      エンジニアとして目指す姿
+    </h2>
+    <p class="mt-[30px] text-16 leading-160 tracking-normal">
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+    </p>
+  </div>
+  <div class="container mt-[120px] lg:mt-[160px]">
+    <SectionTitle title="経歴" titleEn="Carrer" />
+    <div class="mt-14 border-l border-black lg:mt-[60px]">
+      {
+        career.map((period) => (
+          <div class="relative pb-12 pl-[30px] pt-[2px] before:absolute before:left-[-12px] before:top-0 before:size-6 before:rounded-full before:bg-lightBlue before:content-[''] md:pb-[60px] md:pt-0 md:before:left-[-14px] md:before:size-7 [&:last-child]:pb-0">
+            <div class="flex flex-col justify-between gap-[30px] md:flex-row md:gap-[100px] lg:gap-[160px]">
+              <div class="w-[100px] shrink-0">
+                <p class="text-20 font-bold md:text-24">{period.year}</p>
+              </div>
+              <div class="w-auto">
+                <p class="text-16 leading-160 tracking-normal">{period.description}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="container my-[120px] lg:my-[160px]"></div>
+</Layout>
