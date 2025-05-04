@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "3.2.1",
-    "@astrojs/tailwind": "6.0.0",
+    "@astrojs/tailwind": "6.0.2",
     "@tailwindcss/container-queries": "0.1.1",
     "@vercel/edge": "1.2.1",
     "alpinejs": "3.14.8",
