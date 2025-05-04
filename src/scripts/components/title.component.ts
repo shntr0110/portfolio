@@ -1,10 +1,10 @@
 import Alpine from 'alpinejs';
 
-Alpine.data('pageTitle', () => {
+Alpine.data('title', () => {
   return {
     init() {
       if (import.meta.env.DEV) {
-        console.log('init pageTitle');
+        console.log('init title');
       }
 
       window.addEventListener('load', () => {
