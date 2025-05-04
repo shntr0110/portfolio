@@ -1,0 +1,37 @@
+.loading-screen {
+  @apply bg-lightYellow fixed left-0 top-0 z-[999] h-lvh w-lvw transition-opacity duration-600;
+  .load & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loading-text {
+  transition: all ease 600ms;
+  .load & {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+.fv-name {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: all ease-out 700ms 800ms;
+  .load & {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.fv-portfolio {
+  @apply -translate-x-2;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: all linear 600ms 1500ms;
+  .load & {
+    @apply translate-x-0;
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
