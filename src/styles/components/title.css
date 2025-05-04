@@ -1,0 +1,26 @@
+.title-en {
+  @apply -translate-x-[0.65em];
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition:
+    transform ease-out 580ms,
+    opacity linear 580ms,
+    clip-path ease-out 580ms;
+  .active & {
+    @apply translate-x-0;
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.title-jp {
+  @apply translate-y-[80%];
+  opacity: 0;
+  transition:
+    transform ease-out 500ms,
+    opacity linear 500ms;
+  .active & {
+    @apply translate-y-0;
+    opacity: 1;
+  }
+}

@@ -7,10 +7,10 @@ interface Props {
 const { title, titleEn } = Astro.props;
 ---
 
-<h1 class="flex w-fit flex-col">
+<h1 x-data="pageTitle" class="flex w-fit flex-col overflow-hidden">
   <span
-    class="font-poppins text-60 font-semibold capitalize leading-100 tracking-02 text-white lg:text-[96px]"
+    class="title-en font-poppins text-60 font-semibold capitalize leading-100 tracking-02 text-white lg:text-[96px]"
     >{titleEn}</span
   >
-  <span class="text-20 font-bold leading-160 tracking-02 text-white">{title}</span>
+  <span class="title-jp text-20 font-bold leading-160 tracking-02 text-white">{title}</span>
 </h1>

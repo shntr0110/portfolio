@@ -1,3 +1,4 @@
+import intersect from '@alpinejs/intersect';
 import Alpine from 'alpinejs';
 import './components';
 import './stores';
@@ -14,4 +15,5 @@ if (import.meta.env.DEV) {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 (window as any).Alpine = Alpine;
+Alpine.plugin(intersect);
 Alpine.start();

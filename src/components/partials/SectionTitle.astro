@@ -7,7 +7,14 @@ interface Props {
 const { title, titleEn } = Astro.props;
 ---
 
-<h2 class="mx-auto flex w-fit flex-col items-center md:mx-0 md:items-start">
-  <span class="text-[64px] font-bold leading-140 tracking-02 lg:text-[80px]">{titleEn}</span>
-  <span class="text-20 font-bold leading-140 tracking-02 text-blue">{title}</span>
+<h2
+  x-data="{active: false}"
+  x-intersect.threshold.30.once="active = true"
+  x-bind:class="active && 'active'"
+  class="mx-auto flex w-fit flex-col items-center md:mx-0 md:items-start"
+>
+  <span class="title-en text-[64px] font-bold leading-140 tracking-02 lg:text-[80px]"
+    >{titleEn}</span
+  >
+  <span class="title-jp text-20 font-bold leading-140 tracking-02 text-blue">{title}</span>
 </h2>
