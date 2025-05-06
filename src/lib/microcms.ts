@@ -25,7 +25,22 @@ export type Works = {
 
 // APIの呼び出し
 export const getWorks = async (queries?: MicroCMSQueries) => {
-  return await client.getList<Works>({ endpoint: 'works', queries });
+  return await client.getList<Works>({
+    endpoint: 'works',
+    queries: {
+      ...queries,
+      limit: queries?.limit ?? 10,
+    },
+  });
+};
+
+export const getAllWorks = async () => {
+  return await client.getList<Works>({
+    endpoint: 'works',
+    queries: {
+      limit: -1,
+    },
+  });
 };
 
 export const getWorkDetail = async (contentId: string, queries?: MicroCMSQueries) => {
