@@ -4,7 +4,7 @@ import LinkCard from '@components/partials/LinkCard.astro';
 import Layout from '@layouts/Layout.astro';
 
 import { getWorks } from '../../lib/microcms';
-const response = await getWorks({ fields: ['id', 'title', 'titleSub', 'thumbnail'] });
+const response = await getWorks({ limit: 100 });
 
 const title = '制作実績';
 const description = '私のこれまでの制作実績をご紹介します。';
