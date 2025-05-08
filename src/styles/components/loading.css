@@ -1,5 +1,10 @@
 .loading-screen {
-  @apply fixed left-0 top-0 z-[999] h-dvh w-dvw bg-lightYellow transition-opacity duration-700;
+  @apply fixed left-0 top-0 z-[999] h-dvh w-dvw bg-lightYellow transition-opacity;
+  transition-duration: 900ms;
+
+  @screen md {
+    transition-duration: 700ms;
+  }
   .load & {
     opacity: 0;
     pointer-events: none;
@@ -9,9 +14,15 @@
 .loading-text {
   @apply w-[calc(280/375*100vw)] md:w-[calc(550/768*100vw)] lg:w-[calc(580/1024*100vw)] xl:w-[calc(680/1440*100vw)];
   transition:
-    transform 680ms ease-out,
-    filter 700ms ease-out,
-    opacity 650ms ease-out;
+    transform 930ms ease-out,
+    filter 980ms ease-out,
+    opacity 900ms ease-out;
+  @screen md {
+    transition:
+      transform 680ms ease-out,
+      filter 700ms ease-out,
+      opacity 650ms ease-out;
+  }
   .load & {
     transform: scale(1.1);
     opacity: 0;
@@ -23,10 +34,15 @@
   opacity: 0;
   filter: blur(25px);
   transition:
-    filter 800ms theme(transitionTimingFunction.OutExpo) 800ms,
-    opacity 800ms ease-out 800ms;
+    filter 800ms theme(transitionTimingFunction.OutExpo) 900ms,
+    opacity 800ms ease-out 900ms;
   will-change: filter;
   -webkit-will-change: opacity;
+  @screen md {
+    transition:
+      filter 800ms theme(transitionTimingFunction.OutExpo) 800ms,
+      opacity 800ms ease-out 800ms;
+  }
   .load & {
     opacity: 1;
     filter: blur(0px);
