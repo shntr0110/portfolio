@@ -9,9 +9,9 @@ Alpine.data('loading', () => {
 
       const body = document.body;
 
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      const delay = isMobile ? 600 : 400;
-      const remove = isMobile ? 900 : 1100;
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      const delay = isMobile ? 700 : 600;
+      const remove = isMobile ? 950 : 750;
 
       window.addEventListener('load', () => {
         setTimeout(() => {
