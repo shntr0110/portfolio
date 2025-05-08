@@ -1,5 +1,5 @@
 .loading-screen {
-  @apply bg-lightYellow fixed left-0 top-0 z-[999] h-lvh w-lvw transition-opacity duration-600;
+  @apply fixed left-0 top-0 z-[999] h-dvh w-dvw bg-lightYellow transition-opacity duration-600;
   .load & {
     opacity: 0;
     pointer-events: none;
@@ -7,20 +7,29 @@
 }
 
 .loading-text {
-  transition: all ease 600ms;
+  @apply w-[calc(280/375*100vw)] md:w-[calc(550/768*100vw)] lg:w-[calc(580/1024*100vw)] xl:w-[calc(680/1440*100vw)];
+  transition:
+    transform 630ms ease,
+    filter 650ms ease,
+    opacity 600ms ease;
   .load & {
     transform: scale(1.1);
     opacity: 0;
+    filter: blur(20px);
   }
 }
 
 .fv-name {
   opacity: 0;
-  clip-path: inset(0 100% 0 0);
-  transition: all ease-out 700ms 800ms;
+  filter: blur(25px);
+  transition:
+    filter 800ms theme(transitionTimingFunction.OutExpo) 800ms,
+    opacity 800ms ease-out 800ms;
+  will-change: filter;
+  -webkit-will-change: opacity;
   .load & {
     opacity: 1;
-    clip-path: inset(0 0 0 0);
+    filter: blur(0px);
   }
 }
 
