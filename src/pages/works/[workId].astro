@@ -6,7 +6,7 @@ import { getWorks, getWorkDetail } from '../../lib/microcms';
 
 // 詳細記事ページの全パスを取得
 export async function getStaticPaths() {
-  const response = await getWorks({ fields: ['id'] });
+  const response = await getWorks({ fields: ['id'], limit: 100 });
   return response.contents.map((content) => ({
     params: {
       workId: content.id,
