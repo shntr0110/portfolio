@@ -25,7 +25,7 @@
     "@vercel/edge": "1.2.1",
     "alpinejs": "3.14.8",
     "@alpinejs/intersect": "3.13.10",
-    "astro": "5.4.1",
+    "astro": "5.8.1",
     "astro-icon": "1.1.5",
     "microcms-js-sdk": "3.2.0",
     "postcss-fluid-sizing-function": "0.0.2",
